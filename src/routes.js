@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import IdentificacaoRequerente from './component/IdentificacaoRequerente';
+
 export default function Routes() {
   return (
     <Router>
@@ -21,6 +23,9 @@ export default function Routes() {
             <li>
               <Link to="/users">Users</Link>
             </li>
+            <li>
+              <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
+            </li>
           </ul>
         </nav>
 
@@ -33,9 +38,14 @@ export default function Routes() {
           <Route path="/users">
             <Users />
           </Route>
+          <Route path="/idenficacaoRequerente">
+            <IdentRequerente />
+          </Route>
+          
           <Route path="/">
             <Home />
           </Route>
+          
         </Switch>
       </div>
     </Router>
@@ -52,4 +62,8 @@ function About() {
 
 function Users() {
   return <h2>Users</h2>;
+}
+
+function IdentRequerente(){
+    return <IdentificacaoRequerente/>;
 }
