@@ -5,10 +5,16 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AtividadesDesenvolver from "./component/AtividadesDesenvolver";
 
+<<<<<<< HEAD
 import IdentificacaoRequerente from './Component/IdentificacaoRequerente';
 import IdentificacaoObra from './Component/IdentificaoObra';
 
+=======
+import IdentificacaoRequerente from './component/IdentificacaoRequerente';
+ 
+>>>>>>> 13a202b7863ad53050ba70fe5264d52d0b075bee
 export default function Routes() {
   return (
     <Router>
@@ -28,7 +34,11 @@ export default function Routes() {
               <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
             </li>
             <li>
+<<<<<<< HEAD
               <Link to="/idenficacaoObra">Identificacao Obra</Link>
+=======
+              <Link to="/atividadesDesenvolver">Atividades a Desenvolver</Link>
+>>>>>>> 13a202b7863ad53050ba70fe5264d52d0b075bee
             </li>
           </ul>
         </nav>
@@ -45,8 +55,13 @@ export default function Routes() {
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
+<<<<<<< HEAD
           <Route path="/idenficacaoObra">
             <IdentObra />
+=======
+          <Route path="/atividadesDesenvolver">
+            <AtivDesenvolver />
+>>>>>>> 13a202b7863ad53050ba70fe5264d52d0b075bee
           </Route>
           <Route path="/">
             <Home />
@@ -74,6 +89,12 @@ function IdentRequerente(){
     return <IdentificacaoRequerente/>;
 }
 
+<<<<<<< HEAD
 function IdentObra(){
   return<IdentificacaoObra/>;
 }
+=======
+function AtivDesenvolver(){
+  return <AtividadesDesenvolver/>;
+}
+>>>>>>> 13a202b7863ad53050ba70fe5264d52d0b075bee
