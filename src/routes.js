@@ -6,7 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
-import IdentificacaoRequerente from './component/IdentificacaoRequerente';
+import IdentificacaoRequerente from './Component/IdentificacaoRequerente';
+import IdentificacaoObra from './Component/IdentificaoObra';
 
 export default function Routes() {
   return (
@@ -26,6 +27,9 @@ export default function Routes() {
             <li>
               <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
             </li>
+            <li>
+              <Link to="/idenficacaoObra">Identificacao Obra</Link>
+            </li>
           </ul>
         </nav>
 
@@ -41,7 +45,9 @@ export default function Routes() {
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
-          
+          <Route path="/idenficacaoObra">
+            <IdentObra />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -66,4 +72,8 @@ function Users() {
 
 function IdentRequerente(){
     return <IdentificacaoRequerente/>;
+}
+
+function IdentObra(){
+  return<IdentificacaoObra/>;
 }
