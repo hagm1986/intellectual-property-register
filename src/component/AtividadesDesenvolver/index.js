@@ -2,6 +2,19 @@ import React from 'react';
 import { Form } from 'react-bootstrap'
 
 class AtividadesDesenvolver extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+           checkbox:"Música" ,
+           outros:"teste"
+
+        }
+    }
+    changeHandler(event){
+        event.preventDefault();
+        console.log('state: ', this.state);
+        this.setState({[event.target.name]:event.target.value})
+    }
     render() {
         return (
             <div>
@@ -19,7 +32,7 @@ class AtividadesDesenvolver extends React.Component {
                    </p>
                    <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Outros</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
+                        <Form.Control as="textarea" rows={3} name="outros" value={this.state.outros} onChange={(event) => {this.changeHandler(event)}}/>
                         <p>150 caracteres para atingir o máximo permitido</p>
                     </Form.Group>
                     <h1>Atividades Cinematográfica</h1>
