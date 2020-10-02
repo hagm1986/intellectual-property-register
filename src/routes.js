@@ -5,9 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AtividadesDesenvolver from "./component/AtividadesDesenvolver";
 
 import IdentificacaoRequerente from './component/IdentificacaoRequerente';
-
+ 
 export default function Routes() {
   return (
     <Router>
@@ -26,6 +27,9 @@ export default function Routes() {
             <li>
               <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
             </li>
+            <li>
+              <Link to="/atividadesDesenvolver">Atividades a Desenvolver</Link>
+            </li>
           </ul>
         </nav>
 
@@ -41,7 +45,9 @@ export default function Routes() {
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
-          
+          <Route path="/atividadesDesenvolver">
+            <AtivDesenvolver />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -66,4 +72,8 @@ function Users() {
 
 function IdentRequerente(){
     return <IdentificacaoRequerente/>;
+}
+
+function AtivDesenvolver(){
+  return <AtividadesDesenvolver/>;
 }
