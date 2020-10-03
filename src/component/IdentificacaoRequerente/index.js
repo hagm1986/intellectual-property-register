@@ -104,7 +104,7 @@ class IdentificacaoRequerente extends React.Component {
                             <Col>
 
                                 <Form.Label>Morada</Form.Label>
-                                <Form.Control  name="morada" type="text" value={this.state.morada} onChange={this.handleChange}  />
+                                <Form.Control name="morada" type="text" value={this.state.morada} onChange={this.handleChange}  />
 
                             </Col>
 
@@ -125,7 +125,7 @@ class IdentificacaoRequerente extends React.Component {
                             
                             <Col>
 
-                                <Form.Label>Localidade</Form.Label>
+                                <Form.Label> Localidade </Form.Label>
                                 <Form.Control  name="localidade" type="text" value={this.state.localidade} onChange={this.handleChange}   />
 
 
@@ -144,6 +144,9 @@ class IdentificacaoRequerente extends React.Component {
                                     <option name="país">Holanda</option>
                                     <option name="país">França</option>
                                     <option name="país">Serra Leoa</option>
+                                    <option name="país">Japão</option>
+                                    <option name="país">China</option>
+                                    <option name="país">Russia</option>
 
                                 </Form.Control>
                             </Col>
