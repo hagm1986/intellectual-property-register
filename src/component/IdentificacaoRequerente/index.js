@@ -88,7 +88,7 @@ class IdentificacaoRequerente extends React.Component {
 
                             <Col>
 
-                                <Form.Label>Nº telefone</Form.Label>
+                                <Form.Label>Nº telefone / Telemovel </Form.Label>
                                 <Form.Control  name="numTele" type="number" value={this.state.numtele} onChange={this.handleChange}  />
                            
                             </Col>
