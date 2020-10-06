@@ -48,9 +48,9 @@ class AtividadesDesenvolver extends React.Component {
                                 </Col> 
                                     
                                 <Col>
-                                    <Form.Check  name="ativArt"  label="Teatro" type="checkbox"  value={this.state.ativArt} onChange={this.handleChange}  />
-                                    <Form.Check  name="ativArt"  label="Dança" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
-                                    <Form.Check  name="ativArt"  label="Circo" type="checkbox"   value={this.state.ativArt} onChange={this.handleChange} />
+                                    <Form.Check  name="ativArt"  label="Teatro" type="checkbox"  value="Teatro" onChange={this.handleChange}  />
+                                    <Form.Check  name="ativArt"  label="Dança" type="checkbox" value="Dança" onChange={this.handleChange}   />
+                                    <Form.Check  name="ativArt"  label="Circo" type="checkbox"   value="Circo" onChange={this.handleChange} />
                                 </Col>                                        
                         </Form.Row>                  
                     </Form.Group>
@@ -65,11 +65,11 @@ class AtividadesDesenvolver extends React.Component {
                      <Form.Label><b>Atividades Cinematográficas</b></Form.Label> 
                      <Form.Row>                  
                                 <Col>
-                                    <Form.Check  name="ativCinema"  label="Exibição" type="checkbox" value={this.state.ativCinema} onChange={this.handleChange}  />
+                                    <Form.Check  name="ativCinema"  label="Exibição" type="checkbox" value="Exibição" onChange={this.handleChange}  />
                                 </Col> 
                                     
                                 <Col>
-                                    <Form.Check  name="ativCinema"  label="Distribuição" type="checkbox" value={this.state.ativCinema} onChange={this.handleChange}   />
+                                    <Form.Check  name="ativCinema"  label="Distribuição" type="checkbox" value="Distribuição" onChange={this.handleChange}   />
                                 </Col>                                        
                         </Form.Row>  
                      </Form.Group>
@@ -83,13 +83,13 @@ class AtividadesDesenvolver extends React.Component {
                      <Form.Label><b>Atividades Videográficas</b></Form.Label>
                     <Form.Row>                  
                                 <Col>
-                                    <Form.Check  name="ativVideografica"  label="Edição" type="checkbox"  value={this.state.ativVideografica} onChange={this.handleChange} />
-                                    <Form.Check  name="ativVideografica"  label="Aluguer" type="checkbox"  value={this.state.ativVideografica} onChange={this.handleChange} />
+                                    <Form.Check  name="ativVideografica"  label="Edição" type="checkbox"  value="Edição"onChange={this.handleChange} />
+                                    <Form.Check  name="ativVideografica"  label="Aluguer" type="checkbox"  value="Aluguer" onChange={this.handleChange} />
                                 </Col> 
                                     
                                 <Col>
-                                    <Form.Check  name="ativVideografica"  label="Venda" type="checkbox" value={this.state.ativVideografica} onChange={this.handleChange}   />
-                                    <Form.Check  name="ativVideografica"  label="Exibição" type="checkbox" value={this.state.ativVideografica}  onChange={this.handleChange} />
+                                    <Form.Check  name="ativVideografica"  label="Venda" type="checkbox" value="Venda" onChange={this.handleChange}   />
+                                    <Form.Check  name="ativVideografica"  label="Exibição" type="checkbox" value="Exibição"  onChange={this.handleChange} />
                                 </Col>                                        
                         </Form.Row>  
                     </Form.Group>      
