@@ -5,10 +5,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import AtivDesenvolver from "./component/AtividadesDesenvolver";
+
 
 import IdentificacaoRequerente from './component/IdentificacaoRequerente';
 import IdentificacaoObra from './component/IdentificaoObra';
+import AtivDesenvolver from "./component/AtividadesDesenvolver";
 
 export default function Routes() {
   return (
@@ -81,6 +82,7 @@ function IdentRequerente(){
     return <IdentificacaoRequerente/>;
 }
 
+ 
 function IdentObra(){
   return<IdentificacaoObra/>;
 }
