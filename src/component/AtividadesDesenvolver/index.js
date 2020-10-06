@@ -98,8 +98,8 @@ class AtividadesDesenvolver extends React.Component {
                         <Form.Control as="textarea" rows={3} name='ativVideograficaOutros' value={this.state.ativVideograficaOutros} onChange={this.handleChange} />
                         <p>150 caracteres para atingir o máximo permitido</p >
                     </Form.Group>
-                </Form>
-            </div>
+                </Form> 
+                </div>
         );
     }
 }
