@@ -29,11 +29,16 @@ class IdentificacaoRequerente extends React.Component {
         const value = target.type === 'radio' ? target.checked : target.value;
         const name = target.name;
       
+<<<<<<< HEAD
         
         console.log(name);
         console.log(target)
         console.log(value);
         
+=======
+        console.log(this.state);// teste para mudanca de estado
+
+>>>>>>> a6f15453b7d57aac5f15897227fa3679eb71f1a2
         this.setState({ [name]: value });
         
     }
