@@ -38,7 +38,7 @@ class AtividadesDesenvolver extends React.Component {
             <div>
                 <Form>
                 <Form.Group>
-                     <Form.Label><b>Atividades a Desenvolve</b></Form.Label> 
+                     <Form.Label><b>Atividades a Desenvolver</b></Form.Label> 
                  </Form.Group>   
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label><b>Atividades Artisticas</b></Form.Label>    
