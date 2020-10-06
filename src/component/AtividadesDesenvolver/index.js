@@ -43,8 +43,8 @@ class AtividadesDesenvolver extends React.Component {
                         <Form.Row>                  
                                 <Col>
                                     <Form.Check  name="ativArt"  label="Música" type="checkbox" value="musica" onChange={this.handleChange} />
-                                    <Form.Check  name="ativArt"  label="Karoké" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
-                                    <Form.Check  name="ativArt"  label="Tauromaquis" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
+                                    <Form.Check  name="ativArt"  label="Karoké" type="checkbox" value="Karoké" onChange={this.handleChange}   />
+                                    <Form.Check  name="ativArt"  label="Tauromaquis" type="checkbox" value="Tauromaquis" onChange={this.handleChange}   />
                                 </Col> 
                                     
                                 <Col>
