@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form , row, Col} from 'react-bootstrap'
 
+
 class AtividadesDesenvolver extends React.Component {
     constructor(props) {
             super(props);
@@ -36,10 +37,8 @@ class AtividadesDesenvolver extends React.Component {
     render() {
         return (
             <div>
-                <Form>
-                <Form.Group controlId="exampleForm.Separator"> 
-                     <Form.Label><b>Atividades a Desenvolver</b></Form.Label> 
-                 </Form.Group>   
+                <Form>     
+                     <Form.Label ><b>Atividades a Desenvolver</b></Form.Label>    
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label><b>Atividades Artisticas</b></Form.Label>    
                         <Form.Row>                  
@@ -98,7 +97,7 @@ class AtividadesDesenvolver extends React.Component {
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label><b>Outras</b></Form.Label>
                         <Form.Control as="textarea" rows={3} name='ativVideograficaOutros' value={this.state.ativVideograficaOutros} onChange={this.handleChange} />
-                        <p>150 caracteres para atingir o máximo permitido</p >
+                        <p >150 caracteres para atingir o máximo permitido</p >
                     </Form.Group>
                 </Form>
             </div>
