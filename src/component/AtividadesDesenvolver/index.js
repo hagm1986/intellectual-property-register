@@ -1,82 +1,105 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
-
-
-const optionList = ['Música', 'Teatro', 'Karaoke', 'Dança', 'Tauromaquia', 'Circo'];
+import { Form , row, Col} from 'react-bootstrap'
 
 class AtividadesDesenvolver extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = {
-            checkbox: null,
-            act_art_outros: null,
-            actividades_artisticas:null,
-            act_cin_outros:null,
-            act_vid_outros:null,
+            super(props);
+            this.state = { 
+                ativArt:'',
+                ativArtOutras:'',
+                ativCinema:'',
+                ativCinemaOutros:'',
+                ativVideografica:'',
+                ativVideograficaOutros:'',
+
+             };
+        
+            this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);//no caso de submitir info vou usar
+
         }
-    }
-    changeHandler(event) {
-        event.preventDefault();
-        console.log('state: ', this.state);
-        this.setState({ [event.target.name]: event.target.value })
-    }
+        
+        handleChange(event) {
+
+            const target =   event.target;        
+            const value = target.type === 'checkbox' ? target.checked : target.value;
+            const name = target.name;
+        
+            console.log(value);
+            console.log(name);
+            console.log(target);
+
+            this.setState({ [name]: value });
+            
+        }
+
     render() {
         return (
             <div>
                 <Form>
-                    <h1>Atividades a desenvolver</h1>
+                <Form.Label ><header><b>Atividades a Desenvolver</b></header></Form.Label>    
                     <Form.Group controlId="exampleForm.ControlInput1">
-
-                        <Form.Label>Atividades artísticas</Form.Label>
-
-                        {/* <p className="paragrafo">
-                    Música: <input type="checkbox" className="box" />
-                    Teatro: <input type="checkbox" className="box" />  
-                    Karaoke: <input type="checkbox" className="box" />
-                    Dança: <input type="checkbox" className="box" />
-                    Tauromaquia: <input type="checkbox" className="box" />
-                    Circo: <input type="checkbox" className="box" />
-                   </p> */}
-
-                        {optionList.map((type) => (
-                            <div key={`inline-${type}`} className="mb-3">
-                                <Form.Label>{type}</Form.Label>
-                                <Form.Check name="actividades_artisticas" inline id={`inline-${type}-1`} 
-                                value={type}
-                                onChange={(event) => { this.changeHandler(event) }}/>
-
-                            </div>
-                        ))}
+                        <Form.Label><b>Atividades Artisticas</b></Form.Label>    
+                        <Form.Row>                  
+                                <Col>
+                                    <Form.Check  name="ativArt"  label="Música" type="checkbox" value="musica" onChange={this.handleChange} />
+                                    <Form.Check  name="ativArt"  label="Karoké" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
+                                    <Form.Check  name="ativArt"  label="Tauromaquis" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
+                                </Col> 
+                                    
+                                <Col>
+                                    <Form.Check  name="ativArt"  label="Teatro" type="checkbox"  value={this.state.ativArt} onChange={this.handleChange}  />
+                                    <Form.Check  name="ativArt"  label="Dança" type="checkbox" value={this.state.ativArt} onChange={this.handleChange}   />
+                                    <Form.Check  name="ativArt"  label="Circo" type="checkbox"   value={this.state.ativArt} onChange={this.handleChange} />
+                                </Col>                                        
+                        </Form.Row>                  
                     </Form.Group>
+
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Outros</Form.Label>
-                        <Form.Control as="textarea" rows={3} name="act_art_outros" value={this.state.outros} onChange={(event) => { this.changeHandler(event) }} />
+                        <Form.Label><b>Outras</b></Form.Label>
+                        <Form.Control as="textarea" rows={3}  name="ativArtOutras" value={this.state.ativArtOutras} onChange={this.handleChange} />
+                        <p >150 caracteres para atingir o máximo permitido</p>
+                    </Form.Group>
+
+                     <Form.Group>
+                     <Form.Label><b>Atividades Cinematográficas</b></Form.Label> 
+                     <Form.Row>                  
+                                <Col>
+                                    <Form.Check  name="ativCinema"  label="Exibição" type="checkbox" value={this.state.ativCinema} onChange={this.handleChange}  />
+                                </Col> 
+                                    
+                                <Col>
+                                    <Form.Check  name="ativCinema"  label="Distribuição" type="checkbox" value={this.state.ativCinema} onChange={this.handleChange}   />
+                                </Col>                                        
+                        </Form.Row>  
+                     </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                        <Form.Label><b>Outras</b></Form.Label>
+                        <Form.Control as="textarea" rows={3} name="ativCinemaOutros" value={this.state.ativCinemaOutros} onChange={this.handleChange}  />
                         <p>150 caracteres para atingir o máximo permitido</p>
                     </Form.Group>
-                    <h1>Atividades Cinematográfica</h1>
-                    <p className="paragrafo">
-                        Exibição: <input type="checkbox" className="box" />
-                    Distribuição: <input type="checkbox" className="box" />
-                    </p>
+
+                    <Form.Group>
+                     <Form.Label><b>Atividades Videográficas</b></Form.Label>
+                    <Form.Row>                  
+                                <Col>
+                                    <Form.Check  name="ativVideografica"  label="Edição" type="checkbox"  value={this.state.ativVideografica} onChange={this.handleChange} />
+                                    <Form.Check  name="ativVideografica"  label="Aluguer" type="checkbox"  value={this.state.ativVideografica} onChange={this.handleChange} />
+                                </Col> 
+                                    
+                                <Col>
+                                    <Form.Check  name="ativVideografica"  label="Venda" type="checkbox" value={this.state.ativVideografica} onChange={this.handleChange}   />
+                                    <Form.Check  name="ativVideografica"  label="Exibição" type="checkbox" value={this.state.ativVideografica}  onChange={this.handleChange} />
+                                </Col>                                        
+                        </Form.Row>  
+                    </Form.Group>      
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Outras</Form.Label>
-                        <Form.Control as="textarea" rows={3} name="act_cin_outros" onChange={(event) => { this.changeHandler(event) }}/>
-                        <p>150 caracteres para atingir o máximo permitido</p>
-                    </Form.Group>
-                    <h1>Atividades Videográficos</h1>
-                    <p className="paragrafo">
-                        Edição: <input type="checkbox" className="box" />
-                    Venda: <input type="checkbox" className="box" />
-                    Aluguer: <input type="checkbox" className="box" />
-                    Exibição: <input type="checkbox" className="box" />
-                    </p>
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Outras</Form.Label>
-                        <Form.Control as="textarea" rows={3} name="act_vid_outros" onChange={(event) => { this.changeHandler(event) }}/>
-                        <p>150 caracteres para atingir o máximo permitido</p>
+                        <Form.Label><b>Outras</b></Form.Label>
+                        <Form.Control as="textarea" rows={3} name='ativVideograficaOutros' value={this.state.ativVideograficaOutros} onChange={this.handleChange} />
+                        <p>150 caracteres para atingir o máximo permitido</p >
                     </Form.Group>
                 </Form>
-            </div >
+            </div>
         );
     }
 }
