@@ -1,12 +1,13 @@
 import React from 'react';
 import { Form, Col, Row } from 'react-bootstrap'
 
-class IdentificacaoRequerente extends React.Component {
+class IdentificacaoAutor extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          nome: '',
+            tipoEnt:'',
+            sexo:'',
           tipoDoc:'',
           numDoc:'',
           qPedido:'',
@@ -15,7 +16,7 @@ class IdentificacaoRequerente extends React.Component {
           morada:'',
           codPostal:'',
           localidade:'',
-          pais:''
+          país:''
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -29,11 +30,9 @@ class IdentificacaoRequerente extends React.Component {
         const value = target.type === 'radio' ? target.checked : target.value;
         const name = target.name;
       
-      //  console.log(this.state);// teste para mudanca de estado
+        console.log(value);// teste para mudanca de estado
 
         this.setState({ [name]: value });
-        // Chama parent através do props enviado
-        this.props.parentReq(this.state);
         
     }
 
@@ -42,13 +41,33 @@ class IdentificacaoRequerente extends React.Component {
             <div>
 
                 <Form>
-
+         
                     <Form.Group controlId="exampleForm.ControlInput1" >
+                    <Form.Row className="aling-itens-center">
+                        <Col>
+                 
+                    <Form.Label>Tipo de Entidade </Form.Label>
+                    <Form.Control  name="nome" type="text" value={this.state.tipoEnt} onChange={this.handleChange}   />
+                </Col>
+                <Col>
+               
+                <label for="privilegio">Sexo</label>
+            
+		         <select class="form-control" name="sexo" id="sexo">
+			     <option value="">Selecione o Sexo</option>
+			     <option value="Feminino">Feminino</option>
+			     <option value="Masculino">Masculino</option>
+			    </select>
+			      <span class='msg-erro msg-sexo'></span>
+    
+                  </Col>
+                  </Form.Row>
+                   </Form.Group>
 
-                        <Form.Label>Nome do requerente</Form.Label>
+                        <Form.Label>Nome do autor</Form.Label>
                         <Form.Control  name="nome" type="text" value={this.state.nome} onChange={this.handleChange}   />
-
-                    </Form.Group>                                     
+                  
+                                                       
 
                     <Form.Group controlId="exampleForm.ControlInput2"  controlId="exampleForm.ControlSelect2">
 
@@ -57,10 +76,10 @@ class IdentificacaoRequerente extends React.Component {
                             <Col>
 
                                 <Form.Label>Tipo do documento de identificação</Form.Label>
-                                <Form.Control as="select"  value={this.state.value} onChange={this.handleChange}>
+                                <Form.Control as="select"  value={this.state.tipoDoc} onChange={this.handleChange}>
 
-                                    <option name="tipoDoc" value="CNI" >CNI</option>
-                                    <option name="tipoDoc" value="Passaporte" >Passaporte</option>
+                                    <option name="tipoDoc">CNI</option>
+                                    <option name="tipoDoc">Passaporte</option>
 
                                 </Form.Control>
 
@@ -136,20 +155,19 @@ class IdentificacaoRequerente extends React.Component {
                             <Col>
 
                                 <Form.Label>País</Form.Label>
-                                <Form.Control as="select"  value={this.state.value} onChange={this.handleChange}>
+                                <Form.Control as="select"  value={this.state.país} onChange={this.handleChange}>
 
-                                    <option name="pais" value ="CV" >Cabo Verde</option>
-                                    <option name="pais" value ="AGO">Angola</option>
-                                    <option name="pais" value ="EUA">Estados Unidos da America</option>
-                                    <option name="pais" value ="MZ">Moçambique</option>
-                                    <option name="pais" value ="PT">Portugual</option>
-                                    <option name="pais" value ="NL">Holanda</option>
-                                    <option name="pais" value ="FR">França</option>
-                                    <option name="pais" value ="Japão">Japão</option>
-                                    <option name="pais" value ="SL">Serra Leoa</option>
-                                    <option name="pais" value ="JP">Japão</option>
-                                    <option name="pais"value ="CN">China</option>
-                                    <option name="pais"value ="RU">Russia</option>
+                                    <option name="país">Cabo Verde</option>
+                                    <option name="país">Angola</option>
+                                    <option name="país">EUA</option>
+                                    <option name="país">Moçambique</option>
+                                    <option name="país">Portugual</option>
+                                    <option name="país">Holanda</option>
+                                    <option name="país">França</option>
+                                    <option name="país">Serra Leoa</option>
+                                    <option name="país">Japão</option>
+                                    <option name="país">China</option>
+                                    <option name="país">Russia</option>
 
                                 </Form.Control>
                             </Col>
@@ -164,10 +182,10 @@ class IdentificacaoRequerente extends React.Component {
 
                                 <div key={`inline-${type}`}>
 
-                                    <Form.Check  name="qPedido" inline label="O Proprio" type={type} value="Proprio" onChange={this.handleChange} />
-                                    <Form.Check  name="qPedido" inline label="Editor" type={type} id={`inline-${type}-2`} value="Editor" onChange={this.handleChange} />
-                                    <Form.Check  name="qPedido" inline label="Representante" type={type} id={`inline-${type}-3`} value="Representante" onChange={this.handleChange} />
-                                    <Form.Check  name="qPedido" inline label="Titular Sucessivo" type={type} id={`inline-${type}-4`} value="Titular"onChange={this.handleChange} />
+                                    <Form.Check  name="qPedido" inline label="O Proprio" type={type} id={`inline-${type}-1`} value={this.state.qPedido} onChange={this.handleChange} />
+                                    <Form.Check  name="qPedido" inline label="Editor" type={type} id={`inline-${type}-2`} value={this.state.qPedido} onChange={this.handleChange} />
+                                    <Form.Check  name="qPedido" inline label="Representante" type={type} id={`inline-${type}-3`} value={this.state.qPedido} onChange={this.handleChange} />
+                                    <Form.Check  name="qPedido" inline label="Titular Sucessivo" type={type} id={`inline-${type}-4`} value={this.state.qPedido} onChange={this.handleChange} />
                             
                                 </div>
                             ))
@@ -181,4 +199,4 @@ class IdentificacaoRequerente extends React.Component {
     }
 }
 
-export default IdentificacaoRequerente;
+export default IdentificacaoAutor;
