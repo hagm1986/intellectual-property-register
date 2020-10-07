@@ -9,7 +9,9 @@ import {
 
 import IdentificacaoRequerente from './component/IdentificacaoRequerente';
 import IdentificacaoObra from './component/IdentificaoObra';
+import IdentificacaoAutor from './component/IdentificacaoAutor';
 import AtivDesenvolver from "./component/AtividadesDesenvolver";
+import RegistoArtistico from "./page/RegistoArtistico";
 
 export default function Routes() {
   return (
@@ -18,14 +20,10 @@ export default function Routes() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/RegistoArtistico">Página Registo de Obras Literárias, 
+              Artísticas e Científicas</Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
+           
             <li>
               <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
             </li>
@@ -35,18 +33,20 @@ export default function Routes() {
             <li>
               <Link to="/idenficacaoObra">Identificacao Obra</Link>
             </li>
+            <li>
+              <Link to="/idenficacaoAutor">Identificacao Autor</Link>
+            </li>
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+         {/*  Página registo direitos Artísticas */}
+          <Route path="/RegistoArtistico">
+            <RegistoArtistico />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+         
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
@@ -56,10 +56,10 @@ export default function Routes() {
           <Route path="/idenficacaoObra">
             <IdentObra />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/idenficacaoAutor">
+            <IdentAutor />
           </Route>
-          
+         
         </Switch>
       </div>
     </Router>
@@ -85,4 +85,7 @@ function IdentRequerente(){
  
 function IdentObra(){
   return<IdentificacaoObra/>;
+}
+function IdentAutor(){
+  return<IdentificacaoAutor/>;
 }
