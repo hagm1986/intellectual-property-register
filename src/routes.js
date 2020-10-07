@@ -9,6 +9,7 @@ import AtivDesenvolver from "./component/AtividadesDesenvolver";
 
 import IdentificacaoRequerente from './component/IdentificacaoRequerente';
 import IdentificacaoObra from './component/IdentificaoObra';
+import IdentificacaoAutor from './component/IdentificacaoAutor';
 
 export default function Routes() {
   return (
@@ -34,6 +35,9 @@ export default function Routes() {
             <li>
               <Link to="/idenficacaoObra">Identificacao Obra</Link>
             </li>
+            <li>
+              <Link to="/idenficacaoAutor">Identificacao Autor</Link>
+            </li>
           </ul>
         </nav>
 
@@ -54,6 +58,9 @@ export default function Routes() {
           </Route>
           <Route path="/idenficacaoObra">
             <IdentObra />
+          </Route>
+          <Route path="/idenficacaoAutor">
+            <IdentAutor />
           </Route>
           <Route path="/">
             <Home />
@@ -83,4 +90,7 @@ function IdentRequerente(){
 
 function IdentObra(){
   return<IdentificacaoObra/>;
+}
+function IdentAutor(){
+  return<IdentificacaoAutor/>;
 }
