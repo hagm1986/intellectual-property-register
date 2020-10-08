@@ -47,11 +47,17 @@ export default function Routes() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+
          {/*  Página registo direitos Artísticas */}
           <Route path="/RegistoArtistico">
             <RegistoArtistico />
           </Route>
          
+          {/*  Página Registo Patente */}
+          <Route path="/RegistoPatente">
+            <RegistoPatente />
+          </Route>
+
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
