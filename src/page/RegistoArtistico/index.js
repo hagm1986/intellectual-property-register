@@ -11,6 +11,8 @@ import "firebase/database";
 
 import IdentificacaoRequerente from '../../component/IdentificacaoRequerente';
 import AutenticacaoAssinatura from '../../component/AutenticacaoAssinatura';
+import IdentificacaoAutor from '../../component/IdentificacaoAutor';
+
 
 {/* <IdentificacaoRequerente/>
 <DireitosArtisticosLiterario/>
@@ -49,6 +51,13 @@ class RegistoArtistico extends React.Component {
                     <Card.Header>Identificação Requerente</Card.Header>
                     <Card.Body>
                         <IdentificacaoRequerente parentReq={this.callBackReq.bind(this)}/>
+                    </Card.Body>
+                    {/* <DireitosArtisticosLiterario/> */}
+                </Card>
+                <Card>
+                    <Card.Header>Identificação Autor</Card.Header>
+                    <Card.Body>
+                        <IdentificacaoAutor parentReq={this.callBackReq.bind(this)}/>
                     </Card.Body>
                     {/* <DireitosArtisticosLiterario/> */}
                 </Card>
