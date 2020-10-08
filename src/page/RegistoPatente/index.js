@@ -10,10 +10,10 @@ import "firebase/firestore";
 import "firebase/database";
 
 import IdentificacaoRequerente from '../../component/IdentificacaoRequerente';
-//import AtividadesDesenvolver from '../../component/AtividadesDesenvolver';
-//import ProcessoRegisto from '../../component/ProcessoRegisto';
-//import Reinvidicacao from '../../component/Reinvidicacao';
-//import ViewFigura from '../../component/ViewFigura';
+import AtividadesDesenvolver from '../../component/AtividadesDesenvolver';
+import ProcessoRegisto from '../../component/ProcessoRegisto';
+import Reinvidicacao from '../../component/Reinvidicacao';
+import ViewFigura from '../../component/ViewFigura';
 
 
 {/*<IdentificacaoRequerente/>
@@ -52,12 +52,42 @@ class RegistoPatente extends React.Component {
     render() {
         return (
             <div className="container">
+                
                 <Card>
                     <Card.Header>Identificação Requerente</Card.Header>
                     <Card.Body>
                         <IdentificacaoRequerente parentReq={this.callBackReq.bind(this)}/>
                     </Card.Body>
                 </Card>
+
+                <Card>
+                    <Card.Header>Actividades a Desenvolver </Card.Header>
+                    <Card.Body>
+                        <AtividadesDesenvolver parentReq={this.callBackReq.bind(this)}/>
+                    </Card.Body>
+                </Card>
+
+                <Card>
+                    <Card.Header>Processo de Registo </Card.Header>
+                    <Card.Body>
+                        <ProcessoRegisto parentReq={this.callBackReq.bind(this)}/>
+                    </Card.Body>
+                </Card>
+
+                <Card>
+                    <Card.Header>Reinvidicacao </Card.Header>
+                    <Card.Body>
+                        <Reinvidicacao parentReq={this.callBackReq.bind(this)}/>
+                    </Card.Body>
+                </Card>
+
+                <Card>
+                    <Card.Header>View Figura </Card.Header>
+                    <Card.Body>
+                        <ViewFigura parentReq={this.callBackReq.bind(this)}/>
+                    </Card.Body>
+                </Card>
+
                 <br/>
                 <Button className="pull-right" 
                         variant="success"
