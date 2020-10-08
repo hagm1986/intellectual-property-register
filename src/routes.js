@@ -12,8 +12,12 @@ import IdentificacaoObra from './component/IdentificaoObra';
 import IdentificacaoAutor from './component/IdentificacaoAutor';
 import AtivDesenvolver from "./component/AtividadesDesenvolver";
 import RegistoArtistico from "./page/RegistoArtistico";
+<<<<<<< HEAD
+import ListaPropriedade from './component/ListaPropriedade';
+=======
 import RegistoPatente from "./page/RegistoPatente";
 
+>>>>>>> 366d5f03a14f7e9fedfd536f69bcc83faef98393
 
 export default function Routes() {
   return (
@@ -41,6 +45,9 @@ export default function Routes() {
             <li>
               <Link to="/idenficacaoAutor">Identificacao Autor</Link>
             </li>
+            <li>
+              <Link to="/listaPropriedade">Lista de propriedades intelectual</Link>
+            </li>
           </ul>
         </nav>
 
@@ -51,6 +58,9 @@ export default function Routes() {
          {/*  Página registo direitos Artísticas */}
           <Route path="/RegistoArtistico">
             <RegistoArtistico />
+<<<<<<< HEAD
+          </Route>         
+=======
           </Route>
           {/*  Página registo Patente, estava em falta */}
           <Route path="/RegistoPatente">
@@ -62,6 +72,7 @@ export default function Routes() {
             <RegistoPatente />
           </Route>
 
+>>>>>>> 366d5f03a14f7e9fedfd536f69bcc83faef98393
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
           </Route>
@@ -73,6 +84,9 @@ export default function Routes() {
           </Route>
           <Route path="/idenficacaoAutor">
             <IdentAutor />
+          </Route>
+          <Route path="/listaPropriedade">
+            <ListPropriedade />
           </Route>
          
         </Switch>
@@ -103,4 +117,8 @@ function IdentObra(){
 }
 function IdentAutor(){
   return<IdentificacaoAutor/>;
+}
+
+function ListPropriedade(){
+    return <ListaPropriedade/>;
 }

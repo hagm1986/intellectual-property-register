@@ -18,8 +18,7 @@ class IdentificacaoRequerente extends React.Component {
           pais:''
         };
     
-        this.handleChange = this.handleChange.bind(this);
-       // this.handleSubmit = this.handleSubmit.bind(this);//no caso de submitir info vou usar
+        this.handleChange = this.handleChange.bind(this);       
 
       }
     
@@ -31,7 +30,7 @@ class IdentificacaoRequerente extends React.Component {
       
       //  console.log(this.state);// teste para mudanca de estado
 
-        this.setState({ [name]: value });
+        this.setState({ [name]: value });//pegar dados
         // Chama parent através do props enviado
         this.props.parentReq(this.state);
         
