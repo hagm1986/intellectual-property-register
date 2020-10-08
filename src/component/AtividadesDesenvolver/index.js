@@ -68,6 +68,9 @@ class AtividadesDesenvolver extends React.Component {
 
         this.setState({ [name]: value });
 
+        // Chama parent através do props enviado
+        this.props.parentDev(this.state);
+
     }
 
     render() {
