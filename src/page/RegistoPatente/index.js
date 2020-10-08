@@ -24,14 +24,14 @@ import ViewFigura from '../../component/ViewFigura';
  */}
 
 class RegistoPatente extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            dadosRequerente:null,
-            dadosDesenvolver:null,
-            dadosRegisto:null,
-            dadosReivindicacao:null,
-            dadosViewfigura:null
+            dadosRequerente: null,
+            dadosDesenvolver: null,
+            dadosRegisto: null,
+            dadosReivindicacao: null,
+            dadosViewfigura: null
         }
 
         this.callBackReq = this.callBackReq.bind(this);
@@ -42,23 +42,23 @@ class RegistoPatente extends React.Component {
 
         this.submmitHandler = this.submmitHandler.bind(this);
     }
-   
-    callBackReq(dadosReq){
-        this.setState({dadosRequerente:dadosReq});
+
+    callBackReq(dadosReq) {
+        this.setState({ dadosRequerente: dadosReq });
     }
-    callBackDev(dadosDev){
-        this.setState({dadosDesenvolver:dadosDev});
+    callBackDev(dadosDev) {
+        this.setState({ dadosDesenvolver: dadosDev });
     }
-    callBackPreg(dadosPreg){
-        this.setState({dadosRegisto:dadosPreg});
+    callBackPreg(dadosPreg) {
+        this.setState({ dadosRegisto: dadosPreg });
     }
-    callBackRei(dadosRei){
-        this.setState({dadosReivindicacao:dadosRei});
+    callBackRei(dadosRei) {
+        this.setState({ dadosReivindicacao: dadosRei });
     }
-    callBackVfig(dadosVfig){
-        this.setState({dadosViewfigura:dadosVfig});
+    callBackVfig(dadosVfig) {
+        this.setState({ dadosViewfigura: dadosVfig });
     }
-    submmitHandler(){
+    submmitHandler() {
 
         console.log('Acção Gravar!');
         console.log('state: ', this.state.dadosRequerente);
@@ -67,63 +67,63 @@ class RegistoPatente extends React.Component {
         console.log('state: ', this.state.dadosReivindicacao);
         console.log('state: ', this.state.dadosViewfigura);
 
-         // Tenta carrega informações de um no (players)
-         var reqRef = firebase.database().ref('dadosRequerente');
-         var reqDev = firebase.database().ref('dadosDesenvolver');
-         var reqReg = firebase.database().ref('dadosRegisto');
-         var reqRei = firebase.database().ref('dadosReivindicacao');
-         var reqView= firebase.database().ref('dadosViewfigura');
+        // Tenta carrega informações de um no (players)
+        var reqRef = firebase.database().ref('dadosRequerente');
+        var reqDev = firebase.database().ref('dadosDesenvolver');
+        var reqReg = firebase.database().ref('dadosRegisto');
+        var reqRei = firebase.database().ref('dadosReivindicacao');
+        var reqView = firebase.database().ref('dadosViewfigura');
 
-         // Gravação de dados
-         reqRef.push(this.state.dadosRequerente);
+        // Gravação de dados
+        reqRef.push(this.state.dadosRequerente);
         reqDev.push(this.state.dadosDesenvolver);
-         reqReg.push(this.state.dadosRegisto);
-         reqRei.push(this.state.dadosReivindicacao);
-         reqView.push(this.state.dadosViewfigura);
+        reqReg.push(this.state.dadosRegisto);
+        reqRei.push(this.state.dadosReivindicacao);
+        reqView.push(this.state.dadosViewfigura);
 
     }
     render() {
         return (
             <div className="container">
-                
+
                 <Card>
                     <Card.Header>Identificação Requerente</Card.Header>
                     <Card.Body>
-                        <IdentificacaoRequerente parentReq={this.callBackReq.bind(this)}/>
+                        <IdentificacaoRequerente parentReq={this.callBackReq.bind(this)} />
                     </Card.Body>
                 </Card>
 
                 <Card>
                     <Card.Header>Actividades a Desenvolver </Card.Header>
                     <Card.Body>
-                        <AtividadesDesenvolver parentDev={this.callBackDev.bind(this)}/>
+                        <AtividadesDesenvolver parentDev={this.callBackDev.bind(this)} />
                     </Card.Body>
                 </Card>
 
                 <Card>
                     <Card.Header>Processo de Registo </Card.Header>
                     <Card.Body>
-                        <ProcessoRegisto parentReq={this.callBackPreg.bind(this)}/>
+                        <ProcessoRegisto parentReq={this.callBackPreg.bind(this)} />
                     </Card.Body>
                 </Card>
 
                 <Card>
                     <Card.Header>Reinvidicacao </Card.Header>
                     <Card.Body>
-                        <Reinvidicacao parentReq={this.callBackRei.bind(this)}/>
+                        <Reinvidicacao parentReq={this.callBackRei.bind(this)} />
                     </Card.Body>
                 </Card>
 
                 <Card>
                     <Card.Header>View Figura </Card.Header>
                     <Card.Body>
-                        <ViewFigura parentReq={this.callBackVfig.bind(this)}/>
+                        <ViewFigura parentReq={this.callBackVfig.bind(this)} />
                     </Card.Body>
                 </Card>
-                <br/>
-                <Button className="pull-right" 
-                        variant="success"
-                        onClick={this.submmitHandler}>Gravar</Button>
+                <br />
+                <Button className="pull-right"
+                    variant="success"
+                    onClick={this.submmitHandler}>Gravar</Button>
             </div>
         );
     }
