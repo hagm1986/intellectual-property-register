@@ -52,6 +52,10 @@ export default function Routes() {
           <Route path="/RegistoArtistico">
             <RegistoArtistico />
           </Route>
+          {/*  Página registo Patente, estava em falta */}
+          <Route path="/RegistoPatente">
+            <RegistoPatente />
+          </Route>
          
           {/*  Página Registo Patente */}
           <Route path="/RegistoPatente">
