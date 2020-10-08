@@ -12,6 +12,8 @@ import IdentificacaoObra from './component/IdentificaoObra';
 import IdentificacaoAutor from './component/IdentificacaoAutor';
 import AtivDesenvolver from "./component/AtividadesDesenvolver";
 import RegistoArtistico from "./page/RegistoArtistico";
+import RegistoPatente from "./page/RegistoPatente";
+
 
 export default function Routes() {
   return (
@@ -23,7 +25,10 @@ export default function Routes() {
               <Link to="/RegistoArtistico">Página Registo de Obras Literárias, 
               Artísticas e Científicas</Link>
             </li>
-           
+            <li>
+              <Link to="/RegistoPatente">Página Registo de Patente, 
+              Desenho Industrial e Propriedade Industrial </Link>
+            </li>
             <li>
               <Link to="/idenficacaoRequerente">Identificacao Requerente</Link>
             </li>
