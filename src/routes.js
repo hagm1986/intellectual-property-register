@@ -11,6 +11,8 @@ import IdentificacaoRequerente from './component/IdentificacaoRequerente';
 import IdentificacaoObra from './component/IdentificaoObra';
 import IdentificacaoAutor from './component/IdentificacaoAutor';
 import AtivDesenvolver from "./component/AtividadesDesenvolver";
+import ListaPropriedade from "./component/ListaPropriedade";
+
 import RegistoArtistico from "./page/RegistoArtistico";
 import RegistoPatente from "./page/RegistoPatente";
 
@@ -59,11 +61,7 @@ export default function Routes() {
           <Route path="/RegistoPatente">
             <RegistoPatente />
           </Route>
-         
-          {/*  Página Registo Patente */}
-          <Route path="/RegistoPatente">
-            <RegistoPatente />
-          </Route>
+        
 
           <Route path="/idenficacaoRequerente">
             <IdentRequerente />
