@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 
-
+import Home from './page';
 import IdentificacaoRequerente from './component/IdentificacaoRequerente';
 import IdentificacaoObra from './component/IdentificaoObra';
 import IdentificacaoAutor from './component/IdentificacaoAutor';
@@ -53,6 +53,10 @@ export default function Routes() {
             renders the first one that matches the current URL. */}
         <Switch>
 
+        <Route path="/">
+            <Home />
+          </Route>
+
          {/*  Página registo direitos Artísticas */}
           <Route path="/RegistoArtistico">
             <RegistoArtistico />
@@ -83,18 +87,6 @@ export default function Routes() {
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 function IdentRequerente(){
